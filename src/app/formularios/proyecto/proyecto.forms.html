@@ -1,0 +1,16 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h3>Nuevo Proyecto</h3>
+    <form (ngSubmit)="guardarOActualizarProyecto()">
+      <input type="text" placeholder="Nombre" [(ngModel)]="nuevoProyecto.nombre" name="nombre" required>
+      <input type="text" placeholder="Código" [(ngModel)]="nuevoProyecto.codigoProyecto" name="codigoProyecto" required>
+      <input type="text" placeholder="Estado" [(ngModel)]="nuevoProyecto.idEstado" name="idEstado" required>
+      <textarea placeholder="Descripción" [(ngModel)]="nuevoProyecto.descripcion" name="descripcion" required></textarea>
+      
+      <div class="buttons">
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="cerrarFormulario.emit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

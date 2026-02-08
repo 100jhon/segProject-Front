@@ -1,0 +1,30 @@
+<div class="proyecto-container">
+  <div class="header">
+    <h2>Mis Actividades</h2>
+    <button class="btn-agregar">+ Nueva Actividad</button>
+  </div>
+
+  <div class="tabla-proyectos">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th class="acciones-encabezado">
+            <button class="btn-icon" title="Editar" >🔄</button>
+            <button class="btn-icon" title="Eliminar">🗑️</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actividades of Actividades; let i = index">
+          <td>{{ actividades.codigoProyecto }}</td>
+          <td>{{ actividades.nombre }}</td>
+          <td>{{ actividades.descripcion }}</td>
+          <td> <input type="checkbox" [(ngModel)]="actividades.seleccionado" name="check_{{i}}" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

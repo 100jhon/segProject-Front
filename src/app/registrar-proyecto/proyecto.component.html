@@ -1,0 +1,38 @@
+<div class="proyecto-container">
+  <div class="header">
+    <h2>Mis Proyectos</h2>
+    <button class="btn-agregar" (click)="mostrarFormulario = true">+ Nuevo Proyecto</button>
+  </div>
+
+  <div class="tabla-proyectos">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th class="acciones-encabezado">
+            <button class="btn-icon" title="Editar" (click)="abrirFormularioEditar()">🔄</button>
+            <button class="btn-icon" title="Eliminar" (click)="eliminarSeleccionados()">🗑️</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proyecto of proyectos; let i = index">
+          <td>{{ proyecto.codigoProyecto }}</td>
+          <td>{{ proyecto.nombre }}</td>
+          <td>{{ proyecto.descripcion }}</td>
+          <td> <input type="checkbox" [(ngModel)]="proyecto.seleccionado" name="check_{{i}}" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Formulario como componente -->
+<app-formulario-proyecto
+  *ngIf="mostrarFormulario"
+  [proyectoEditar]="proyectoEditar"
+  (cerrarFormulario)="mostrarFormulario = false"
+  (proyectoCreado)="cargarProyectos()">
+</app-formulario-proyecto>

@@ -1,0 +1,38 @@
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+  position: fixed; /* Se queda fijo en pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa todo el ancho */
+  height: 100vh; /* Ocupa todo el alto */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Para que quede encima de todo */
+}
+
+/* Caja blanca centrada */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}

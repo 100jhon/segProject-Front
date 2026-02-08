@@ -1,0 +1,30 @@
+<div class="proyecto-container">
+  <div class="header">
+    <h2>Mis Tareas</h2>
+    <button class="btn-agregar">+ Nueva Tarea</button>
+  </div>
+
+  <div class="tabla-proyectos">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th class="acciones-encabezado">
+            <button class="btn-icon" title="Editar" >🔄</button>
+            <button class="btn-icon" title="Eliminar">🗑️</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tareas of Tareas; let i = index">
+          <td>{{ tareas.codigoProyecto }}</td>
+          <td>{{ tareas.nombre }}</td>
+          <td>{{ tareas.descripcion }}</td>
+          <td> <input type="checkbox" [(ngModel)]="tareas.seleccionado" name="check_{{i}}" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<!-- Botón engranaje siempre visible -->
+<div class="row">
+  <div class="col-1">
+    <button class="toggle-btn" (click)="toggleSidebar($event)">⚙️</button>
+  </div>
+  <div class="col-11">
+    <div class="info-usuario-horizontal">
+      <div class="info-box">
+        <label>Empresa:</label>
+        <p>{{ usuario?.empresa }}</p>
+      </div>
+      <div class="info-box">
+        <label>Usuario:</label>
+        <p>{{ usuario?.nombre}}</p>
+      </div>
+      <div class="info-box">
+        <label>Rol:</label>
+        <p>{{ usuario?.rol }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sidebar flotante -->
+<div #sidebarRef class="sidebar" [class.hidden]="isSidebarHidden">
+  <div class="menu">
+    <a routerLink="/dashboard">Inicio</a>
+    <a routerLink="/registrar-proyecto">Registrar proyecto</a>
+    <a routerLink="/registrar-actividad">Registrar actividad</a>
+    <a routerLink="/registrar-tarea">Registrar tarea</a>
+    <a routerLink="/detalle-tarea">Detalle tarea</a>
+  </div>
+
+  <button class="logout-btn" (click)="cerrarSesion()">Cerrar sesión</button>
+</div>
+
+<!-- Contenido principal -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
