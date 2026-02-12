@@ -6,14 +6,16 @@ import { MainLayoutComponent } from './layouts/main-layout.component';
 import { detalleTarea } from './detalle-tarea/tarea.component';
 import { Proyecto } from './registrar-proyecto/proyecto.component';
 import { Actividades } from './registrar-actividad/actividad.component';
-import { AuthService } from './services/auth';
+import { userRegister } from './register-user/register-user.component';
+import { AuthGuard } from './authGuard/auth';
+
 
 export const routes: Routes = [
 
     {
     path: '',
-    component: MainLayoutComponent, // 📦 Este es el layout que incluye el sidebar
-    // 🔐 BLOQUEO DEL LAYOUT COMPLETO
+    component: MainLayoutComponent,// 📦 Este es el layout que incluye el sidebar
+    canActivate: [AuthGuard], 
     children: [
       { path: 'dashboard', component: Dashboard },
       { path: 'registrar-tarea', component: RegistrarTarea },
@@ -23,7 +25,7 @@ export const routes: Routes = [
       // aquí puedes agregar más vistas que sí usan sidebar
     ]
   },
-
+  {path: 'registerUser', component: userRegister},
   { path: 'login', component: Login },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }

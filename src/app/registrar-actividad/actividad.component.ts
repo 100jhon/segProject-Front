@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
     selector:'app-actividad-component',
      imports: [FormsModule,CommonModule],
     templateUrl: './actividad.Component.html',
-    styleUrl: './actividad.Component.css'
+    styleUrl: './actividad.component.css'
 })
 
 

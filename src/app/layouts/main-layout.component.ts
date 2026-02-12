@@ -3,23 +3,24 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { UsuarioService, UsuarioInfo } from '../services/usuario-info/usuario.service';
+import { AuthService } from '../services/auth';
 
 
 @Component({
-   selector: 'app-main-layout',
-   imports: [CommonModule, RouterModule],
-   templateUrl: './main-layout.component.html',
-   styleUrls:['./main-layout.component.css']
+  selector: 'app-main-layout',
+  imports: [CommonModule, RouterModule],
+  templateUrl: './main-layout.component.html',
+  styleUrls: ['./main-layout.component.css']
 })
 
 
-export class MainLayoutComponent implements OnInit{
+export class MainLayoutComponent implements OnInit {
 
-  isSidebarHidden =true;
+  isSidebarHidden = true;
 
   usuario: UsuarioInfo | null = null;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
+  constructor(private usuarioService: UsuarioService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.usuarioService.getUsuarioInfo().subscribe({
@@ -28,15 +29,13 @@ export class MainLayoutComponent implements OnInit{
     });
   }
 
+  cerrarSesion() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    // Aquí cerramos cesion
+  }
 
-
-
-cerrarSesion() {
-  this.router.navigate(['/login']);
-  // Aquí cerramos cesion
-}
-
-   @ViewChild('sidebarRef') sidebarRef!: ElementRef;
+  @ViewChild('sidebarRef') sidebarRef!: ElementRef;
 
   toggleSidebar(event: MouseEvent): void {
     event.stopPropagation(); // Detiene el evento para que no se dispare handleClickOutside
@@ -53,5 +52,5 @@ cerrarSesion() {
       this.isSidebarHidden = true;
     }
   }
-    
+
 }
