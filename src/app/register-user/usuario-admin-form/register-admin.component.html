@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card">
+    <h2>Usuario Administrador</h2>
+
+    <div class="grid" [formGroup]="form">
+
+      <div class="form-group">
+        <label>Primer nombre</label>
+        <input type="text" formControlName="primerNombre" placeholder="Ingrese primer nombre">
+        <label>Primer apellido</label>
+        <input type="text" formControlName="primerApellido" placeholder="Ingrese primer apellido">
+        <label>telefono</label>
+        <input type="text" formControlName="telefono" placeholder="Ingrese telefono">
+        <label>Tipo de documento</label>
+        <select formControlName="tipoDocumento">
+          <option value="">Seleccione...</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Segundo nombre</label>
+        <input type="text" formControlName="segundoNombre" placeholder="Ingrese segundo apellido">
+        <label>Segundo apellido</label>
+        <input type="text" formControlName="segundoApellido" placeholder="Ingrese segundo nombre">
+        <label>Direccion</label>
+        <input type="text" formControlName="direccion" placeholder="Ingrese direccion">
+        <label>Número de documento</label>
+        <input type="text" formControlName="numeroDocumento" placeholder="Ingrese número">
+      </div>
+
+      <div class="form-group full">
+        <label>Email</label>
+        <input type="email" formControlName="correo" placeholder="admin@empresa.com">
+      </div>
+
+      <div class="form-group full">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="********">
+      </div>
+
+    </div>
+  </div>
+</div>

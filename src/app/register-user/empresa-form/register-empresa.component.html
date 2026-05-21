@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card">
+    <h2>Registro de Empresa</h2>
+
+    <div class="grid" [formGroup]="form">
+
+      <div class="form-group">
+        <label>Tipo de persona</label>
+        <select formControlName="tipoPersona">
+          <option value="">Seleccione...</option>
+          <option value= 1>Persona Natural</option>
+          <option value= 2>Persona Jurídica</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Tipo de identificación</label>
+        <select formControlName="documento">
+          <option value="">Seleccione...</option>
+          <option value= 1>Cédula de Ciudadanía</option>
+          <option value= 2>Cédula de Extranjería</option>
+          <option value= 3>Pasaporte</option>
+          <option value= 4>NIT</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Número de identificación</label>
+        <input type="text" formControlName="nit" placeholder="Ingrese número de documento">
+      </div>
+
+      <div class="form-group full">
+        <label>Nombre / Razón Social</label>
+        <input type="text" formControlName="nombre" placeholder="Ingrese nombre o razón social">
+      </div>
+
+      <div class="form-group">
+        <label>Dirección</label>
+        <input type="text" formControlName="direccion" placeholder="Calle 123 #45-67">
+      </div>
+
+      <div class="form-group">
+        <label>Teléfono</label>
+        <input type="text" formControlName="telefono" placeholder="3001234567">
+      </div>
+
+      <div class="form-group full">
+        <label>Email</label>
+        <input type="email" formControlName="correo" placeholder="contacto@empresa.com">
+      </div>
+
+    </div>
+  </div>
+</div>

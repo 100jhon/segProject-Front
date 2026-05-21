@@ -8,9 +8,11 @@
     <table>
       <thead>
         <tr>
-          <th>Código</th>
           <th>Nombre</th>
-          <th>Descripción</th>
+          <th>descripcion</th>
+          <th>horaEstimada</th>
+          <th>historiaEpica</th>
+          <th>historiaUsuario</th>
           <th class="acciones-encabezado">
             <button class="btn-icon" title="Editar" >🔄</button>
             <button class="btn-icon" title="Eliminar">🗑️</button>
@@ -18,11 +20,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let tareas of Tareas; let i = index">
-          <td>{{ tareas.codigoProyecto }}</td>
-          <td>{{ tareas.nombre }}</td>
-          <td>{{ tareas.descripcion }}</td>
-          <td> <input type="checkbox" [(ngModel)]="tareas.seleccionado" name="check_{{i}}" /></td>
+        <tr *ngFor="let tarea of tareas; let i = index">
+          <td>{{ tarea.nombre }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td>{{ tarea.horaEstimada }}</td>
+          <td>{{ tarea.historiaEpica }}</td>
+          <td>{{ tarea.historiaUsuario }}</td>
+          <td> <input type="checkbox" [(ngModel)]="tarea.seleccionado" name="check_{{i}}" /></td>
         </tr>
       </tbody>
     </table>

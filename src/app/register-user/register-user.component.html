@@ -1,1 +1,36 @@
-<h1>registrar</h1>
+<div class="page">
+  <div class="container">
+
+    <form>
+
+      <!-- PASO 1 -->
+      <ng-container *ngIf="currentStep === 1">
+        <app-empresa-form [form]="empresaForm"></app-empresa-form>
+
+        <div class="btn-right">
+        <button type="button" class="btn" (click)="nextStep()">
+          Siguiente
+        </button>
+       </div>
+      </ng-container>
+
+      <!-- PASO 2 -->
+      <ng-container *ngIf="currentStep === 2">
+        <app-usuario-admin-form [form]="usuarioForm"></app-usuario-admin-form>
+
+        <div class="btn-group">
+          <button type="button" class="btn secondary" (click)="prevStep()">
+            Volver
+          </button>
+
+          <button type="button" class="btn" (click)="registrar()">
+            Registrar
+          </button>
+        </div>
+      </ng-container>
+
+    </form>
+
+  </div>
+
+</div>

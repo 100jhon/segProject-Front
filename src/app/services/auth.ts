@@ -7,8 +7,28 @@ import { Observable, map } from 'rxjs';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth';
+  private apiUrlRegistrar = 'http://localhost:8080/api/auth';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
+
+
+  register(request: any): Observable<string> {
+
+    return this.http.post<{ token: string }>(
+      `${this.apiUrlRegistrar}/registrar`,
+      request
+    ).pipe(
+      map(response => {
+
+        localStorage.setItem('token', response.token);
+
+        return response.token;
+
+      })
+    );
+
+  }
 
   /**
    * 🔑 Login: guarda el token automáticamente

@@ -2,7 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { UsuarioService, UsuarioInfo } from '../services/usuario-info/usuario.service';
+import { UsuarioService, UsuarioInfo } from '../services/usuario/usuario.service';
 import { AuthService } from '../services/auth';
 
 

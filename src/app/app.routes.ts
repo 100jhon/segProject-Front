@@ -6,7 +6,7 @@ import { MainLayoutComponent } from './layouts/main-layout.component';
 import { detalleTarea } from './detalle-tarea/tarea.component';
 import { Proyecto } from './registrar-proyecto/proyecto.component';
 import { Actividades } from './registrar-actividad/actividad.component';
-import { userRegister } from './register-user/register-user.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 import { AuthGuard } from './authGuard/auth';
 
 
@@ -25,7 +25,7 @@ export const routes: Routes = [
       // aquí puedes agregar más vistas que sí usan sidebar
     ]
   },
-  {path: 'registerUser', component: userRegister},
+  {path: 'registerUser', component: RegisterUserComponent},
   { path: 'login', component: Login },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
